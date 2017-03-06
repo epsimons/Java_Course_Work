@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<company>
+	<employee id="001">
+		<firstname>John</firstname>
+		<lastname>Public</lastname>
+		<position>Programmer</position>
+		<salary>$64,000</salary>
+	</employee>
+	<employee id="002">
+		<firstname>Jane</firstname>
+		<lastname>Doe</lastname>
+		<position>Web Designer</position>
+		<salary>$55,000</salary>
+	</employee>
+	<employee id="003">
+		<firstname>Michael</firstname>
+		<lastname>Myers</lastname>
+		<position>Security</position>
+		<salary>$43,000</salary>
+	</employee>
+	<employee id="004">
+		<firstname>Freddy</firstname>
+		<lastname>Kruger</lastname>
+		<position>Public Relations</position>
+		<salary>$62,000</salary>
+	</employee>
+</company>
