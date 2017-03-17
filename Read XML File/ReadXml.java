@@ -6,8 +6,12 @@
 package readxml;
 
 /**
- *
+ * 
  * @author Ethan
+ * @version 2.1
+ * @since March 17, 2017
+ * @see IOException
+ * 
  */
 
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -24,6 +28,9 @@ public class ReadXML {
 
     /**
      * @param args the command line arguments
+     * 
+     * 
+     * <p>About this section:<br> This section reads the XML file and loads the values into a string. The string is then displayed in a generated window.</p>
      */
     
     public static void main(String[] args) {
@@ -39,38 +46,41 @@ public class ReadXML {
         String winTitle = "Employees";
         String message = "<html><head><style>body{padding:10px;}th{background-color: blue;color:yellow;}</style></head><body><h1>Acme Portable Hole Company</h1><table border='1' style='border-collapse:collapse;'><tr><th>Employee id</th><th>First Name</th><th>Last Name</th><th>Position</th><th>Salary</th></tr>";
         
-	//System.out.println("Acme Portable Hole Company");
-
 	for (int temp = 0; temp < nodeList.getLength(); temp++) {
 
 		Node nNode = nodeList.item(temp);
 
-		//System.out.println();
-                
+		
 		if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 
 			Element eElement = (Element) nNode;
-                        /*
-			System.out.println("Employee id : " + eElement.getAttribute("id"));
-			System.out.println("First Name : " + eElement.getElementsByTagName("firstname").item(0).getTextContent());
-			System.out.println("Last Name : " + eElement.getElementsByTagName("lastname").item(0).getTextContent());
-			System.out.println("Position : " + eElement.getElementsByTagName("position").item(0).getTextContent());
-			System.out.println("Salary : " + eElement.getElementsByTagName("salary").item(0).getTextContent());
-                        */
+                        
                         message += "<tr><td>" + eElement.getAttribute("id") + "</td><td>" + eElement.getElementsByTagName("firstname").item(0).getTextContent() + "</td><td>" + eElement.getElementsByTagName("lastname").item(0).getTextContent() + "</td><td>" + eElement.getElementsByTagName("position").item(0).getTextContent() + "</td><td>" + eElement.getElementsByTagName("salary").item(0).getTextContent()+"</td></tr>";
                         
 		}     
 	}
                         message += "</table></body><html>";
+                        /**
+                         * @see message
+                         */
                         createWindow(winTitle, message);
     } catch (Exception e) {
 	e.printStackTrace();
 }
-            //System.exit(0);
+            
     }
     
-
-public static void createWindow(String name, String msg)
+    /**
+     *
+     * @param name Takes the name string and adds it to the title
+     * @param msg Takes the msg string and adds content to the body
+     * 
+     * 
+     * <br>This section was originally in WindowTest.java
+     * I combined the two and added formatting for the table via HTML and CSS
+     */
+    
+    public static void createWindow(String name, String msg)
     {
         JFrame frame = new JFrame(name);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
