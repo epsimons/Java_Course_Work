@@ -67,14 +67,13 @@ public class ReadXML {
     } catch (Exception e) {
 	e.printStackTrace();
 }
-            
+     
     }
     
     /**
      *
      * @param name Takes the name string and adds it to the title
      * @param msg Takes the msg string and adds content to the body
-     * 
      * 
      * <br>This section was originally in WindowTest.java
      * I combined the two and added formatting for the table via HTML and CSS
@@ -84,8 +83,11 @@ public class ReadXML {
     {
         JFrame frame = new JFrame(name);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JLabel textLabel = new JLabel(msg,SwingConstants.CENTER); textLabel.setPreferredSize(new Dimension(450, 300)); 
-        frame.getContentPane().add(textLabel, BorderLayout.CENTER); 
+        JLabel textLabel = new JLabel(msg,SwingConstants.CENTER); 
+        // Add JScrollPane to add scrolling functionality
+        JScrollPane scroll = new JScrollPane(textLabel);
+        textLabel.setPreferredSize(new Dimension(450, 300)); 
+        frame.getContentPane().add(scroll, BorderLayout.CENTER); 
         frame.setLocationRelativeTo(null);
         frame.pack();
         frame.setVisible(true);
