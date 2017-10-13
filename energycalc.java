@@ -20,7 +20,7 @@ public class energycalc {
 		// Perform calculation and round the number
 		// so that conversion to integer is without problems
 		energy = Math.round((grains*(Math.pow(velocity, 2)))/(450282));
-		int energy2 = energy.intValue();
+		int energy2 = energy.intValue(); // convert to int
 		
 		// Display the result
 		JOptionPane.showMessageDialog(null, "The energy of the bullet is "+ energy2 + " ft/lbs");
