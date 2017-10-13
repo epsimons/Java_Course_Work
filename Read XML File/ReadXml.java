@@ -34,15 +34,18 @@ public class ReadXML {
      */
     
     public static void main(String[] args) {
+	    /* use try to prevent crashes */
             try {
-
+	/* assign the file to an object */
 	File fXmlFile = new File("/Users/Ethan/NetBeansProjects/ReadXML/src/readxml/employee.xml");
+	/* the file gets parsed and the values inside the xml tags are read */
 	DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 	DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 	Document doc = dBuilder.parse(fXmlFile);
 	doc.getDocumentElement().normalize();
 	NodeList nodeList = doc.getElementsByTagName("employee");
         
+	/* prepare to iterate through and display file contents */
         String winTitle = "Employees";
         String message = "<html><head><style>body{padding:10px;}th{background-color: blue;color:yellow;}</style></head><body><h1>Acme Portable Hole Company</h1><table border='1' style='border-collapse:collapse;'><tr><th>Employee id</th><th>First Name</th><th>Last Name</th><th>Position</th><th>Salary</th></tr>";
         
@@ -59,10 +62,13 @@ public class ReadXML {
                         
 		}     
 	}
+		    	/* add more content to the message */
                         message += "</table></body><html>";
                         /**
                          * @see message
                          */
+		    
+		    /* create the window to display the data */
                         createWindow(winTitle, message);
     } catch (Exception e) {
 	e.printStackTrace();
