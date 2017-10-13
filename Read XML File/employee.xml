@@ -24,4 +24,10 @@
 		<position>Public Relations</position>
 		<salary>$62,000</salary>
 	</employee>
+	<employee id="004">
+		<firstname>Jason</firstname>
+		<lastname>Borne</lastname>
+		<position>Head of Security</position>
+		<salary>$84,000</salary>
+	</employee>
 </company>
