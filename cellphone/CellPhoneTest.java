@@ -10,7 +10,12 @@ package cellphone;
  * @author Ethan
  */
 
-import java.util.Scanner;
+/**
+ *
+ * NOTE: This is a command line app
+ */
+
+import java.util.Scanner;  // This will allow the "reading" of your input
 
 public class CellPhoneTest {
 
@@ -24,6 +29,7 @@ public class CellPhoneTest {
         String testMod;
         double testPrice;
         
+        /* keyboard is the new scanner object */
         Scanner keyboard = new Scanner(System.in);
         
         System.out.print("Enter the manufacturer: ");
