@@ -35,14 +35,18 @@ public class Polymorphism {
      * <p><b>poly</b> is copied 3 times to account for the 3 types of
      * variables that can pass through it.</p>
      */
+    
+    /* If a string */
     public static void poly(String x){
         System.out.println(x);
     }
     
+    /* If an int */
     public static void poly(int x){
         System.out.println(x);
     }
     
+    /* If a bool */
     public static void poly(boolean x){
         System.out.println(x);
     }
